@@ -21,8 +21,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-include Lakes
-texas_lakes = Lakes::Texas
+texas_lakes = Lakes::Texas.new
 
 # get a list of all public texas lakes
 texas_lakes.list
