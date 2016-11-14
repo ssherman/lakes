@@ -26,7 +26,7 @@ texas_lakes = Lakes::Texas.new
 # get a list of all public texas lakes
 texas_lakes.list
 
-# get very details information about a specific lake
+# get very detailed information about a specific lake
 texas_lakes.get_details('name of lake')
 ```
 ## Development
