@@ -1,7 +1,6 @@
 require 'net/http'
 require 'nokogiri'
 require 'date'
-require 'json'
 require 'try'
 
 module Lakes
@@ -20,9 +19,11 @@ module Lakes
       content = Net::HTTP.get(uri)
       html_doc = Nokogiri::HTML(content)
       
+      # remove elements not needed to make parsing easier
       html_doc.search('div.announce, div.alert, div#bottomwrapper').each do |src|
         src.remove
       end
+
       html_doc.search('div#maincontent ul li a').each do |lake_html|
         lake_name = cleanup_data(lake_html.text)
         @lake_data[lake_name] = { details_uri: "#{base_url}#{lake_html[:href]}" }
@@ -65,14 +66,12 @@ module Lakes
     end
 
     def parse_tips_and_tactics(main_div, lake_data)
-      # Tips & Tactics
       data = main_div.xpath('//h6[contains(text(), "Tips & Tactics")]').first
       content = data.try(:next_element).try(:text)
       lake_data[:tips_and_tactics] = content
     end
 
     def parse_fishing_structure(main_div, lake_data)
-      # Fishing Cover/Structure
       data = main_div.xpath('//h6[contains(text(), "Fishing Cover/Structure")]').first
       content = data.try(:next_element).try(:to_html)
       lake_data[:structure_and_cover_description] = content
@@ -245,17 +244,17 @@ module Lakes
       lake_data[:fishing_records] = fishing_records_data
     end
 
+    # converts a html table with headers and rows into
+    # an array of hashes with header => value
     def process_data_table(headers, rows)
       data = []
       header_count = headers.length
       row_count = rows.count / header_count
 
       row_data_index = 0
-      # 3.times do
       row_count.times do |row_index|
 
         entry = {}
-        # 6.times do
         header_count.times do |header_index|
           header = cleanup_data(headers[header_index])
           table_data = cleanup_data(rows[row_data_index])
@@ -265,12 +264,6 @@ module Lakes
         data << entry
       end
       data
-    end
-
-    def parse_fishing_record_tables(category_name, html_table, lake_data)
-      # parse data
-      next_element = html_table.next_element
-      parse_fishing_record_tables(category_name, next_element, lake_data) if next_element.name == 'table'
     end
 
     # converts this:
@@ -287,6 +280,7 @@ module Lakes
       url_parts.join('/') + '/' + fixed_href
     end
 
+    # texas lake websites use lots of non breaking spaces
     def cleanup_data(value)
       nbsp = 160.chr('UTF-8')
       value = value.strip.gsub(nbsp, '')
