@@ -15,8 +15,7 @@ module Lakes
       return @lake_data.keys unless @lake_data.empty?
 
       base_url = 'http://tpwd.texas.gov/fishboat/fish/recreational/lakes/'
-      uri = URI("#{base_url}lakelist.phtml")
-      content = Net::HTTP.get(uri)
+      content = http_get("#{base_url}lakelist.phtml")
       html_doc = Nokogiri::HTML(content)
       
       # remove elements not needed to make parsing easier
@@ -42,9 +41,7 @@ module Lakes
     protected
 
     def parse_lake_details(lake_data)
-      uri = URI(lake_data[:details_uri] + '/')
-      content = Net::HTTP.get(uri).encode('UTF-8', 'Windows-1252')
-
+      content = http_get(lake_data[:details_uri] + '/')
       html_doc = Nokogiri::HTML(content)
       main_div = html_doc.at('div#maincontent')
 
@@ -103,39 +100,27 @@ module Lakes
     end
 
     def parse_fishing_regulations(main_div, lake_data)
-      data = main_div.xpath('//h6[contains(text(), "Fishing Regulations")]').first
-      content = data.try(:next_element).try(:to_html)
-      lake_data[:fishing_regulations] = content
+      process_simple_section(main_div, lake_data, 'Fishing Regulations', :fishing_regulations, true)
     end
 
     def parse_lake_maps(main_div, lake_data)
-      data = main_div.xpath('//h6[contains(text(), "Lake Maps")]').first
-      content = data.try(:next_element).try(:text)
-      lake_data[:lake_maps] = content
+      process_simple_section(main_div, lake_data, 'Lake Maps', :lake_maps, false)
     end
 
     def parse_lake_characteristics(main_div, lake_data)
-      data = main_div.xpath('//h6[contains(text(), "Lake Characteristics")]').first
-      content = data.try(:next_element).try(:text)
-      lake_data[:lake_characteristics] = content
+      process_simple_section(main_div, lake_data, 'Lake Characteristics', :lake_characteristics, false)
     end
 
     def parse_water_conditions(main_div, lake_data)
-      data = main_div.xpath('//h6[contains(text(), "Water Conditions")]').first
-      content = data.try(:next_element).try(:to_html)
-      lake_data[:water_conditions] = content
+      process_simple_section(main_div, lake_data, 'Water Conditions', :water_conditions, true)
     end
 
     def parse_reservoir_controlling_authority(main_div, lake_data)
-      data = main_div.xpath('//h6[contains(text(), "Reservoir Controlling Authority")]').first
-      content = data.try(:next_element).try(:text)
-      lake_data[:reservoir_controlling_authority] = content
+      process_simple_section(main_div, lake_data, 'Reservoir Controlling Authority', :reservoir_controlling_authority, false)
     end
 
     def parse_aquatic_vegetation(main_div, lake_data)
-      data = main_div.xpath('//h6[contains(text(), "Aquatic Vegetation")]').first
-      content = data.try(:next_element).try(:text)
-      lake_data[:aquatic_vegetation] = content
+      process_simple_section(main_div, lake_data, 'Aquatic Vegetation', :aquatic_vegetation, false)
     end
 
     def parse_predominant_fish_species(main_div, lake_data)
@@ -163,8 +148,7 @@ module Lakes
         uri = link['href']
         lake_data[:stocking_history_uri] = convert_relative_href(uri, lake_data[:details_uri])
 
-        uri = URI(lake_data[:stocking_history_uri])
-        content = Net::HTTP.get(uri).encode('UTF-8', 'Windows-1252')
+        content = http_get(lake_data[:stocking_history_uri])
         stocking_history_doc = Nokogiri::HTML(content)
 
         stocking_history_table = stocking_history_doc.at('div#maincontent table')
@@ -184,8 +168,7 @@ module Lakes
         uri = link['href']
         lake_data[:current_fishing_report_uri] = convert_relative_href(uri, lake_data[:details_uri])
 
-        uri = URI(lake_data[:current_fishing_report_uri])
-        content = Net::HTTP.get(uri).encode('UTF-8', 'Windows-1252')
+        content = http_get(lake_data[:current_fishing_report_uri])
         current_fishing_report_doc = Nokogiri::HTML(content)
         current_fishing_report_dl = current_fishing_report_doc.at('div.row.report div.container dl')
 
@@ -206,8 +189,7 @@ module Lakes
       uri = link['href']
       lake_data[:fishing_records_uri] = convert_relative_href(uri, lake_data[:details_uri])
 
-      uri = URI(lake_data[:fishing_records_uri])
-      content = Net::HTTP.get(uri).encode('UTF-8', 'Windows-1252')
+      content = http_get(lake_data[:fishing_records_uri])
       lake_records_doc = Nokogiri::HTML(content)
       lake_records_main_div = lake_records_doc.at('div#maincontent')
 
@@ -285,6 +267,19 @@ module Lakes
       nbsp = 160.chr('UTF-8')
       value = value.strip.gsub(nbsp, '')
       value.empty? ? nil : value
+    end
+
+    def process_simple_section(main_div, lake_data, section_title, data_name, html)
+      data = main_div.xpath("//h6[contains(text(), \"#{section_title}\")]").first
+      element_type_function = html ? :to_html : :text
+      content = data.try(:next_element).try(element_type_function)
+      lake_data[data_name] = content
+    end
+
+    # texas lake pages are encoded in Windows-1252 :(
+    def http_get(url)
+      uri = URI(url)
+      Net::HTTP.get(uri).encode('UTF-8', 'Windows-1252')
     end
   end
 end
