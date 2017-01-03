@@ -31,10 +31,11 @@ module Lakes
     end
 
     def get_details(lake_name)
+      puts "getting details for #{lake_name}"
       list
       data = lake_data[lake_name]
       raise 'Lake not found' if data.nil?
-
+      data[:name] = lake_name
       parse_lake_details(data)
     end
 
@@ -50,15 +51,15 @@ module Lakes
       parse_reservoir_controlling_authority(main_div, lake_data)
       parse_aquatic_vegetation(main_div, lake_data)
       parse_predominant_fish_species(main_div, lake_data)
-      parse_lake_records(main_div, lake_data)
       parse_current_fishing_report(main_div, lake_data)
-      parse_stocking_history(main_div, lake_data)
       parse_lake_surveys(main_div, lake_data)
       parse_lake_maps(main_div, lake_data)
       parse_fishing_regulations(main_div, lake_data)
       parse_angling_opportunities(main_div, lake_data)
       parse_fishing_structure(main_div, lake_data)
       parse_tips_and_tactics(main_div, lake_data)
+      parse_lake_records(main_div, lake_data)
+      parse_stocking_history(main_div, lake_data)
       lake_data
     end
 
@@ -108,7 +109,19 @@ module Lakes
     end
 
     def parse_lake_characteristics(main_div, lake_data)
-      process_simple_section(main_div, lake_data, 'Lake Characteristics', :lake_characteristics, false)
+      data = main_div.xpath("//h6[contains(text(), 'Lake Characteristics')]").first
+      content = data.try(:next_element).try(:text).try(:strip)
+      lake_data[:raw_lake_characteristics] = content
+
+      parser = LakeCharacteristicsParser.new(content)
+      puts parser.raw_text
+
+      lake_data[:lake_characteristics] = {}
+      lake_data[:lake_characteristics][:location_desc] = parser.location_desc
+      lake_data[:lake_characteristics][:surface_area_in_acres] = parser.surface_area_in_acres
+      lake_data[:lake_characteristics][:max_depth_in_feet] = parser.max_depth_in_feet
+      lake_data[:lake_characteristics][:year_impounded] = parser.year_impounded
+      puts "lake_data[:lake_characteristics]: #{lake_data[:lake_characteristics].inspect}"
     end
 
     def parse_water_conditions(main_div, lake_data)
