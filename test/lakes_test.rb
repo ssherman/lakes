@@ -40,4 +40,16 @@ class LakesTest < Minitest::Test
     assert_equal ' 1939, dam rebuilt in 1953', parser.year_impounded_raw_text
     assert_equal 1939, parser.year_impounded
   end
+
+  def test_caddo_lake
+    content = File.read('test/data/lake_characteristics/Caddo.txt')
+    parser = LakeCharacteristicsParser.new(content)
+    assert_equal 'On Big Cypress Bayou on the Texas-Louisiana state line, northeast of Marshall in Harrison and Marion counties', parser.location_desc
+    assert_equal " 26,800 acres\r", parser.surface_area_raw_text
+    assert_equal 26800, parser.surface_area_in_acres
+    assert_equal " 20 feet\r", parser.max_depth_raw_text
+    assert_equal 20, parser.max_depth_in_feet
+    assert_equal " First dam built in 1914, \r\n  replaced in 1971", parser.year_impounded_raw_text
+    assert_equal 1914, parser.year_impounded
+  end
 end

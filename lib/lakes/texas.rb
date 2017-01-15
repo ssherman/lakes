@@ -114,14 +114,12 @@ module Lakes
       lake_data[:raw_lake_characteristics] = content
 
       parser = LakeCharacteristicsParser.new(content)
-      puts parser.raw_text
 
       lake_data[:lake_characteristics] = {}
       lake_data[:lake_characteristics][:location_desc] = parser.location_desc
       lake_data[:lake_characteristics][:surface_area_in_acres] = parser.surface_area_in_acres
       lake_data[:lake_characteristics][:max_depth_in_feet] = parser.max_depth_in_feet
       lake_data[:lake_characteristics][:year_impounded] = parser.year_impounded
-      puts "lake_data[:lake_characteristics]: #{lake_data[:lake_characteristics].inspect}"
     end
 
     def parse_water_conditions(main_div, lake_data)

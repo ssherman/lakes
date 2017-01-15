@@ -6,8 +6,6 @@ class LakeCharacteristicsParser
 
   def initialize(text)
     @raw_text = text
-    #puts "text: #{@raw_text}"
-    #File.write("test/data/lake_characteristics/Conroe.txt", @raw_text)
     parse
   end
 
@@ -15,7 +13,7 @@ class LakeCharacteristicsParser
     @location_desc = @raw_text.match(/^location:(.*)(surface area)|(surface acres)|(maximum depth|impounded):/im).captures.first
     @surface_area_raw_text = @raw_text.match(/surface (area|acres):(.*)/i).try(:captures).try(:[], 1)
     @max_depth_raw_text = @raw_text.match(/maximum depth:(.*)/i).try(:captures).try(:first)
-    @year_impounded_raw_text = @raw_text.match(/impounded:(.*)/i).try(:captures).try(:first)
+    @year_impounded_raw_text = @raw_text.match(/impounded:(.*)/im).try(:captures).try(:first)
 
     @location_desc = cleanup_raw_text(@location_desc)
 
@@ -45,7 +43,7 @@ class LakeCharacteristicsParser
     end
 
     @year_impounded = cleanup_raw_text(@year_impounded_raw_text)
-      .try(:match, /^([0-9,]+)/)
+      .try(:match, /([0-9,]+)/)
       .try(:captures)
       .try(:first)
       .try(:delete, ',')
