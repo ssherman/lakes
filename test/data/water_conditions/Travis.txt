@@ -1,0 +1,6 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/travis">Current Lake Level</a><br>
+<!--<a href="http://www.lcra.org/water/XML_lake.html">Current Lake Level</a><br /> -->
+  Conservation Pool Elevation: 681 ft. msl, but lake is usually below this level<br>
+  Fluctuation: High, 10-20 feet<br>
+  Normal Clarity: Clear to slightly 
+  off-color in upper sections</p>

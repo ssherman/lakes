@@ -1,0 +1,4 @@
+<p>Normal Water Level: 600 ft. msl<br>
+  Fluctuation: Severe, 15 feet 
+                  or more<br>
+  Normal Clarity: Clear to slightly stained</p>

@@ -1,0 +1,7 @@
+<p> Current
+    Water Level: Available at marina, (940) 937-2102<br>
+  <!--Conservation Pool Elevation: 1,144 ft. msl<br />-->
+  Fluctuation: Moderate, 2-4 
+                  ft. annually<br>
+  Normal Clarity: Clear with 2-4 ft. 
+                  visibility in lower reservoir; 1-2 ft in upper</p>

@@ -1,0 +1,5 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/brady-creek">Current Lake Level</a><br><!--<a href="http://waterdata.usgs.gov/tx/nwis/dv?format=gif&amp;period=31&amp;site_no=08144900">Current
+    Lake Level</a><br /> -->
+    Conservation Pool Elevation: 1,743 ft. msl<br>
+  Fluctuation: 3 to 5 feet<br>
+  Normal Clarity: Moderately stained</p>

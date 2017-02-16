@@ -1,0 +1,6 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/aquilla">Current Lake Level</a><br>
+<!--<a href="http://http://www.swf-wc.usace.army.mil/reports/fish.htm">Current
+    Lake Level</a><br />-->
+  Conservation Pool Elevation: 537.5 ft. msl<br>
+  Fluctuation: 3-4 feet<br>
+  Normal Clarity: Stained</p>

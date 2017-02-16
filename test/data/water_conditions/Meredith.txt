@@ -1,0 +1,9 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/meredith">Current Lake Level</a><br>
+<!--<a href="http://waterdata.usgs.gov/tx/nwis/dv?format=gif&amp;period=31&amp;site_no=07227900">Current
+    Lake Level</a><br /> -->
+  Conservation Pool Elevation:  2,941 ft. msl<br>
+  Fluctuation: Moderate to severe, 
+                  4-10 ft. per year<br>
+  Normal Clarity: Upper reservoir 
+                  turbid red water (3-6 inch visibility), lower reservoir clear
+  (4-8 ft. visibility)  </p>

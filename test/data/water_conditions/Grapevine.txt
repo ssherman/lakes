@@ -1,0 +1,4 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/grapevine">Current Lake Level</a><br>
+  Conservation Pool Elevation: 535 ft. msl<br>
+  Fluctuation: 5-10 feet<br>
+  Normal Clarity: Stained</p>

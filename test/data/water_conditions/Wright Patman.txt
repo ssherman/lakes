@@ -1,0 +1,4 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/wright-patman">Current Lake Level</a><br>
+  Conservation Pool Elevation: 220.6 ft. msl<br>
+  Fluctuation: 4-5 feet<br>
+  Normal Clarity: Moderate</p>

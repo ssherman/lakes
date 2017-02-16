@@ -1,0 +1,5 @@
+<p>Current
+    Lake Level: Lake Caretaker (936) 639-4840    <br>
+    Conservation Pool Elevation: 197.5 ft. msl<br>
+  Fluctuation: 1-3 feet<br>
+  Normal Clarity: Clear</p>

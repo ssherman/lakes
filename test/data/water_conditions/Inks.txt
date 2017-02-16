@@ -1,0 +1,5 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/inks">Current Lake Level</a><br>
+<!--<a href="http://www.lcra.org/water/XML_lake.html">Current Lake Level</a><br /> -->
+  Conservation Pool Elevation: 888.22 ft. msl<br>
+  Fluctuation: 1 foot annually<br>
+  Normal Clarity: Clear to slightly stained</p>

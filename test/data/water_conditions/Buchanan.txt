@@ -1,0 +1,6 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/buchanan">Current Lake Level</a><br>
+<!--<a href="http://www.lcra.org/water/XML_lake.html">Current Lake Level</a><br />
+  Conservation Pool Elevation: 1020.35 ft. msl<br /> -->
+  Fluctuation: Considerable<br>
+  Normal Clarity: Clear at
+  the dam; gradually becomes more turbid as you move upstream </p>

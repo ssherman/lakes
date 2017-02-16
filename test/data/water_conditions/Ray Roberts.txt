@@ -1,0 +1,4 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/ray-roberts">Current Lake Level</a><br>
+  Conservation Pool Elevation: 632.5 ft. msl<br>
+  Fluctuation: 3-5 feet<br>
+  Normal Clarity: Clear</p>

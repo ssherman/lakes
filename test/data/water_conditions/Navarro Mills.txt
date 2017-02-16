@@ -1,0 +1,4 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/navarro-mills">Current Lake Level</a><br>
+  Conservation Pool Elevation: 424.5 ft. msl<br>
+  Fluctuation: 4 feet<br>
+  Normal Clarity: Muddy</p>

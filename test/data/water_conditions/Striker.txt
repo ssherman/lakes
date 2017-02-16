@@ -1,0 +1,4 @@
+<p><a href="http://waterdata.usgs.gov/nwis/uv?site_no=08033810">Current Lake Level</a><br>
+                  Conservation Pool Elevation: 292 ft. msl<br>
+  Fluctuation: 1-2 feet annually<br>
+  Normal Clarity: Moderately turbid</p>

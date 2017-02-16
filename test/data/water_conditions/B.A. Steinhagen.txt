@@ -1,0 +1,4 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/b-a-steinhagen">Current Lake Level</a><br>
+  Conservation Pool Elevation: 82.5 ft. msl<br>
+  Fluctuation: Average 3 feet annually<br>
+  Normal Clarity: High turbidity</p>

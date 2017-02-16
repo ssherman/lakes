@@ -1,0 +1,4 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/bonham">Current Lake Level</a><br>
+  Conservation Pool Elevation: 565 ft. msl<br>
+  Fluctuation: Moderate<br>
+  Normal Clarity: Moderate</p>

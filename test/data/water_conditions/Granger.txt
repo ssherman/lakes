@@ -1,0 +1,5 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/granger">Current Lake Level</a><br>
+  Conservation Pool Elevation: 504 ft. msl<br>
+  Fluctuation: Moderate<br>
+  Normal Clarity: Turbid to moderately 
+  turbid </p>

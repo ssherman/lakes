@@ -1,0 +1,5 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/lavon">Current Lake Level</a><br>
+  Conservation Pool Elevation: 492 ft. msl<br>
+  Fluctuation: Moderate<br>
+  Normal Clarity: Moderate, greenish 
+  color</p>

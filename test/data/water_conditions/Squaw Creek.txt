@@ -1,0 +1,5 @@
+<p><a href="http://waterdata.usgs.gov/tx/nwis/dv?referred_module=sw&amp;format=gif&amp;period=31&amp;site_no=08091730">Current
+    Lake Level</a><br>
+  Conservation Pool Elevation: 775 ft. msl<br>
+  Fluctuation: 1-2 feet<br>
+  Normal Clarity: Very clear</p>

@@ -1,0 +1,3 @@
+<p>Spillway Elevation: 2921 ft. msl <br>
+  Fluctuation: Moderate to severe, 4-10 feet annually<br>
+  Normal Clarity: Turbid, 1-2 ft visibility</p>

@@ -1,0 +1,8 @@
+<p><a href="http://www.nps.gov/amis/planyourvisit/lake-levels.htm">Current
+    Lake Level</a><br>
+  Conservation Pool Elevation: 1117 ft. msl<br>
+  Fluctuation: Depends on 
+                  rainfall and downstream irrigation demands. Annual fluctuations
+  can be 5-10 feet. Historical fluctuations have dropped lake
+                  as much as 50 feet below conservation pool.<br>
+  Normal Clarity: Clear to slightly stained</p>

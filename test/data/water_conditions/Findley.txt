@@ -1,0 +1,4 @@
+<p>Normal Elevation:
+  192 ft. msl<br>
+  Fluctuation: 1-3 feet<br>
+  Normal Clarity: Turbid</p>

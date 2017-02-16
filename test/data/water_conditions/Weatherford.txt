@@ -1,0 +1,5 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/weatherford">Current Lake Level</a><br>
+  Conservation Pool Elevation: 896 ft. msl<br>
+  Fluctuation: 2 to 8 feet annually <br>
+  Normal Clarity: Moderately clear 
+  to stained</p>

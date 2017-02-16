@@ -1,0 +1,6 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/abilene">Current Lake Level</a><br>
+<!--<a href="http://waterdata.usgs.gov/tx/nwis/uv?site_no=08083270">Current
+    Lake Level</a><br />-->
+  Conservation Pool Elevation: 2,012 ft. msl<br>
+  Fluctuation: Moderate, sometimes prone to long periods of dropping water levels<br>
+  Normal Clarity: Very muddy</p>

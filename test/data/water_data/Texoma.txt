@@ -1,0 +1,772 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class=""> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+
+    <!-- tell IE to use the most modern rendering engine available -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"a1ce58ca1b","agent":"","transactionName":"ZwQGYRQDDBUAV00MDV5OIkAIARYPDloWFhVZEkpXChcHFhNdVxFYWQ8AXBALBhMAWGYJA1sE","applicationID":"2253293","errorBeacon":"bam.nr-data.net","applicationTime":200}</script>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=2"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <title>Water Data For Texas</title>
+
+    
+    
+
+    
+
+    <link rel="stylesheet" href="/static/components/leaflet/leaflet.css">
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css'>
+    <link rel="stylesheet" href="/static/components/bootstrap-3.3.5-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/components/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/static/components/Leaflet.awesome-markers/dist/leaflet.awesome-markers.css">
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css'  />
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css'  />
+    
+    <link rel="stylesheet" href="/static/components/tablesorter/dist/css/theme.bootstrap.min.css"  />
+
+
+    
+    <!-- WDFT css -->
+    <link rel="stylesheet" href="/static/build/dist.css" >
+
+    
+  <link rel="stylesheet" href="/reservoirs/static/bp/build/dist.css">
+
+
+    <script src="/static/components/jquery/dist/jquery.min.js"></script>
+    
+
+    
+      
+
+        <!-- Google Analytics -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-51479064-1', 'waterdatafortexas.org');
+          ga('send', 'pageview');
+        </script>
+
+
+      
+    
+
+  </head>
+
+  <body lang="en">
+    <div class="wrapper">
+      <a id="skip-link" href="#content" class="sr-only sr-only-focusable">skip to main content</a>
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/reservoirs"> 
+              <img class="logo-wdft" src="/static/img/wdft_logo_light_bg.png" height="40px" style="padding-left:10px" /> 
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            
+              <ul class="nav navbar-nav">
+                <li  class="active" ><a href="/reservoirs"> Reservoirs </a></li>
+                <li ><a href="/drought"> Drought </a></li>
+                <li ><a href="/groundwater"> Groundwater </a></li>
+                <li  ><a href="/coastal"> Coastal </a></li>
+              </ul>
+            
+
+
+            <ul class="nav navbar-nav navbar-right">
+              <li  class="dropdown" >
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">About <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/about">Water Data for Texas</a></li>
+                  <li><a href="/disclaimer">Disclaimer</a></li>
+                  <li><a href="/policies">Site Policy</a></li>                  
+                </ul>
+              </li>
+              <li><a class="navbar-brand logo-image" href="http://www.twdb.texas.gov/"> 
+                <img class="" src="/static/img/twdb_logo_dark_bg.png" height="45px" /> 
+              </a></li>  
+            </ul>
+            
+            
+
+          </div>
+        </div>
+      </nav>
+      
+      <div class="container-fluid">
+        <div id="content">
+          
+<nav class="navbar navbar-default sub-nav" role='navigation'>
+  <div class='container-fluid'>
+    <div class='navbar-header'>
+      <button class='navbar-toggle collapsed' data-toggle='collapse' data-target='#reservoirs-nav'>
+        <span class="sr-only">Toggle reservoirs navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+  
+    <div class="collapse navbar-collapse" id="reservoirs-nav">
+      <ul class="nav nav-pills">
+        <li class=""> <a href="/reservoirs/statewide"> Statewide</a></li>
+
+        <li class="dropdown " >
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">By Planning Area<b class="caret"></b></a>
+          <ul id="menu1" class="dropdown-menu">
+            <li><a href="/reservoirs/region">Summary</a></li>
+            <li><a href="/reservoirs/region/brazos-g">Brazos G</a></li>
+            <li><a href="/reservoirs/region/coastal-bend">Coastal Bend</a></li>
+            <li><a href="/reservoirs/region/east-texas">East Texas</a></li>
+            <li class='disabled'><a href="/reservoirs/region/far-west-texas">Far West Texas</a></li>
+            <li><a href="/reservoirs/region/lavaca">Lavaca</a></li>
+            <li><a href="/reservoirs/region/llano-estacado">Llano Estacado</a></li>
+            <li><a href="/reservoirs/region/lower-colorado">Lower Colorado</a></li>
+            <li><a href="/reservoirs/region/north-east-texas">North East Texas</a></li>
+            <li><a href="/reservoirs/region/panhandle">Panhandle</a></li>
+            <li><a href="/reservoirs/region/plateau">Plateau</a></li>
+            <li><a href="/reservoirs/region/region-b">Region B</a></li>
+            <li><a href="/reservoirs/region/region-c">Region C</a></li>
+            <li><a href="/reservoirs/region/region-f">Region F</a></li>
+            <li><a href="/reservoirs/region/region-h">Region H</a></li>
+            <li><a href="/reservoirs/region/rio-grande">Rio Grande</a></li>
+            <li><a href="/reservoirs/region/south-central-texas">South Central Texas</a></li>
+          </ul>
+
+        </li>
+        <li class="dropdown ">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">By River Basin<b class="caret"></b></a>
+          <ul id="menu2" class="dropdown-menu">
+            <li><a href="/reservoirs/basin">Summary</a></li>
+            <li><a href="/reservoirs/basin/brazos">Brazos</a></li>
+            <li><a href="/reservoirs/basin/canadian">Canadian</a></li>
+            <li><a href="/reservoirs/basin/colorado">Colorado</a></li>
+            <li><a href="/reservoirs/basin/cypress">Cypress</a></li>
+            <li><a href="/reservoirs/basin/guadalupe">Guadalupe</a></li>
+            <li><a href="/reservoirs/basin/lavaca">Lavaca</a></li>
+            <li><a href="/reservoirs/basin/neches">Neches</a></li>
+            <li><a href="/reservoirs/basin/nueces">Nueces</a></li>
+            <li><a href="/reservoirs/basin/red">Red</a></li>
+            <li><a href="/reservoirs/basin/rio-grande">Rio Grande</a></li>
+            <li><a href="/reservoirs/basin/sabine">Sabine</a></li>
+            <li><a href="/reservoirs/basin/san-antonio">San Antonio</a></li>
+            <li><a href="/reservoirs/basin/san-jacinto">San Jacinto</a></li>
+            <li><a href="/reservoirs/basin/sulphur">Sulphur</a></li>
+            <li><a href="/reservoirs/basin/trinity">Trinity</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown ">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">By Municipal Area<b class="caret"></b></a>
+          <ul id="menu2" class="dropdown-menu">
+            <li><a href="/reservoirs/municipal">Summary</a></li>
+            <li><a href="/reservoirs/municipal/abilene">Abilene</a></li>
+            <li><a href="/reservoirs/municipal/amarillo">Amarillo</a></li>
+            <li><a href="/reservoirs/municipal/austin">Austin</a></li>
+            <li><a href="/reservoirs/municipal/beaumont-port-arthur">Beaumont - Port Arthur</a></li>
+            <li><a href="/reservoirs/municipal/brownsville">Brownsville (Lower Rio Grande Valley)</a></li>
+            <li><a href="/reservoirs/municipal/corpus-christi">Corpus Christi</a></li>
+            <li><a href="/reservoirs/municipal/dallas">Dallas</a></li>
+            <li><a href="/reservoirs/municipal/el-paso">El Paso</a></li>
+            <li><a href="/reservoirs/municipal/fort-worth">Fort Worth</a></li>
+            <li><a href="/reservoirs/municipal/houston">Houston</a></li>
+            <li><a href="/reservoirs/municipal/laredo">Laredo</a></li>
+            <li><a href="/reservoirs/municipal/lubbock">Lubbock</a></li>
+            <li><a href="/reservoirs/municipal/midland-odessa">Midland-Odessa</a></li>
+            <li><a href="/reservoirs/municipal/nacogdoches">Nacogdoches</a></li>
+            <li><a href="/reservoirs/municipal/san-angelo">San Angelo</a></li>
+            <li><a href="/reservoirs/municipal/temple-killeen">Temple Killeen</a></li>
+            <li><a href="/reservoirs/municipal/texarkana">Texarkana</a></li>
+            <li><a href="/reservoirs/municipal/tyler">Tyler</a></li>
+            <li><a href="/reservoirs/municipal/waco">Waco</a></li>
+            <li><a href="/reservoirs/municipal/wichita-falls">Wichita Falls</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown ">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">By Climate Region<b class="caret"></b></a>
+          <ul id="menu2" class="dropdown-menu">
+            <li><a href="/reservoirs/climate">Summary</a></li>
+            <li><a href="/reservoirs/climate/east-texas">East Texas</a></li>
+            <li><a href="/reservoirs/climate/edwards-plateau">Edwards Plateau</a></li>
+            <li><a href="/reservoirs/climate/high-plains">High Plains</a></li>
+            <li><a href="/reservoirs/climate/low-rolling-plains">Low Rolling Plains</a></li>
+            <li class='disabled'><a href="/reservoirs/climate/lower-valley">Lower Valley</a></li>
+            <li><a href="/reservoirs/climate/north-central">North Central</a></li>
+            <li><a href="/reservoirs/climate/south">South</a></li>
+            <li><a href="/reservoirs/climate/south-central">South Central</a></li>
+            <li><a href="/reservoirs/climate/trans-pecos">Trans Pecos</a></li>
+            <li><a href="/reservoirs/climate/upper-coast">Upper Coast</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="/reservoirs/flood"> <i class="fa fa-star-o"> </i> Flooding </a>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">About  <b class="caret"></b></a>
+          <ul id="menu2" class="dropdown-menu">
+            <li class=""> <a href="/reservoirs/glossary"> Glossary</a></li>
+            <li class=""> <a href="/reservoirs/faq"> Frequently Asked Questions</a></li>
+            <li class=""> <a href="/reservoirs/methodology"> How we get the numbers</a></li>
+            <li class=""> <a href="/reservoirs/download"> Downloading Data</a></li>
+            <li class=""> <a href="/reservoirs/about"> Data Providers</a></li>
+          </ul>
+        </li>  
+      </ul>
+    </div>
+  </div>
+</nav>
+
+           
+  
+    <div class="alert alert-info">
+      <strong>recent changes</strong>
+      <p>2013-05-08: 
+            The rating curve for this reservoir has been updated and replaced
+            with the most recent data from the TWDB Hydrosurvey Program.
+        </p>
+    </div>
+  
+
+          
+  
+  
+  
+  <div class="row">
+    <div class="col-md-12 page-title">
+      <h2> Lake Texoma: <small> 95.0% full as of 2017-02-13 </small></h2>
+     </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">        
+      <div id="storage-plot-carousel" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="active item plot-recent">
+        <img class="plot image-responsive" src="/reservoirs/individual/texoma/recent-volume.png" alt="plot of recent storage data"> </img>
+      </div>
+      <div class="item plot-historical">
+        <img class="plot image-responsive" src="/reservoirs/individual/texoma/historical-volume.png" alt="plot of storage data for the entire period of record"> </img>
+      </div>
+      <div class="item plot-statistics">
+        <img class="plot image-responsive" src="/reservoirs/individual/texoma/recent-storage-statistics.png" alt="plot of statistics on the past three years of data"> </img>
+      </div>
+      
+    </div>
+  </div>
+  <div class="btn-group-wrap text-center">
+    <div id="storage-plot-carousel-nav" class="btn-group" data-toggle="buttons">
+      <label class="btn btn-primary active btn-sm">
+        <input type="radio" name="options" data-slide-to="0"> Recent
+      </label>
+      <label class="btn btn-primary btn-sm">
+        <input type="radio" name="options" data-slide-to="1"> Historical
+      </label>
+      <label class="btn btn-primary btn-sm">
+        <input type="radio" name="options" data-slide-to="2"> Statistics
+      </label>
+
+      
+    </div>
+  </div>
+    </div>
+    
+      <div class="col-md-8 col-md-offset-2">
+        <p id="chart-footnote" class="footnote"> 
+        Lake Texoma straddles the border of Texas and Oklahoma, Texas has rights
+        to 50% of Lake Texoma's total conservation capacity. Percent full,
+        conservation storage and conservation capacity are based on the Texas
+        share.
+    
+        The elevation-storage rating curve used to produce the storage
+        hydrograph is made of two segments: (1) the segment up to the
+        conservation pool top (below the red line) is based on measured data,
+        while the segment in the flood pool (above the red line) is an
+        extrapolation from the first segment and shouldn't be relied upon for
+        flood storage information.
+     </p>
+      </div>  
+    
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 table-responsive">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"> <i class="fa fa-ellipsis-v"> </i> Historical Data</h3>
+        </div>
+        <table class="table table-striped table-bordered table-condensed">
+          <thead>
+            <tr>
+              <th style="min-width:8em;">   </th>
+              <th style="min-width:5em;"> Date </th>
+              <th class="uses-popover" title="Percent Full" data-container="body" data-content="
+        The ratio of conservation storage to conservation capacity expressed as
+        a percentage.
+    "> 
+                Percent Full
+              </th>
+              <th class="uses-popover" title="Water Surface Elevation" data-container="body" data-content="
+        The elevation of the top surface of a reservoir&#39;s body of water.
+    "> 
+                Mean Water Level <br> (ft)
+              </th>
+              <th class="uses-popover" title="Reservoir Storage" data-container="body" data-content="
+        The amount of water present in a reservoir.
+    "> 
+                Reservoir Storage <br> (acre-ft)
+              </th>
+              <th class="uses-popover" title="Conservation Storage" data-placement="left" data-container="body" data-content="
+        The amount of water present within a reservoir&#39;s conservation pool; if
+        the reservoir is shared with another state or country then conservation
+        storage refers only to the portion that belongs to Texas.
+    "> 
+                Conservation Storage <br> (acre-ft)
+              </th>
+              <th class="uses-popover" title="Conservation Capacity" data-placement="left" data-container="body" data-content="
+        The capacity of a reservoir&#39;s conservation pool; if the reservoir is
+        shared with another state or country then conservation capacity refers
+        only to the portion that belongs to Texas.
+    "> 
+                Conservation Capacity <br> (acre-ft)
+              </th>
+              <th class="uses-popover" title="Surface Area" data-placement="left" data-container="body" data-content="
+        The area of the top surface of a reservoir&#39;s body of water.
+    "> 
+                Surface Area <br> (acres)
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td> Today </td>
+                <td> 2017-02-13 </a></td>
+                <td> 95.0 </td>
+                <td> 615.28 </td>
+                <td> 2,391,039 </td>
+                <td> 1,195,516 </td>
+                <td> 1,258,113 </td>
+                <td> 70,550 </td>
+              </tr>
+            
+              <tr>
+                <td> Yesterday </td>
+                <td> 2017-02-12 </a></td>
+                <td> 95.1 </td>
+                <td> 615.30 </td>
+                <td> 2,392,448 </td>
+                <td> 1,196,221 </td>
+                <td> 1,258,113 </td>
+                <td> 70,603 </td>
+              </tr>
+            
+              <tr>
+                <td> 2 days ago </td>
+                <td> 2017-02-11 </a></td>
+                <td> 95.2 </td>
+                <td> 615.35 </td>
+                <td> 2,395,986 </td>
+                <td> 1,197,990 </td>
+                <td> 1,258,113 </td>
+                <td> 70,741 </td>
+              </tr>
+            
+              <tr>
+                <td> 1 week ago </td>
+                <td> 2017-02-06 </a></td>
+                <td> 96.1 </td>
+                <td> 615.65 </td>
+                <td> 2,417,336 </td>
+                <td> 1,208,665 </td>
+                <td> 1,258,113 </td>
+                <td> 71,599 </td>
+              </tr>
+            
+              <tr>
+                <td> 1 month ago </td>
+                <td> 2017-01-13 </a></td>
+                <td> 100.0 </td>
+                <td> 617.35 </td>
+                <td> 2,542,476 </td>
+                <td> 1,258,113 </td>
+                <td> 1,258,113 </td>
+                <td> 75,257 </td>
+              </tr>
+            
+              <tr>
+                <td> 3 months ago </td>
+                <td> 2016-11-13 </a></td>
+                <td> 100.0 </td>
+                <td> 618.42 </td>
+                <td> 2,623,829 </td>
+                <td> 1,258,113 </td>
+                <td> 1,258,113 </td>
+                <td> 76,785 </td>
+              </tr>
+            
+              <tr>
+                <td> 6 months ago </td>
+                <td> 2016-08-13 </a></td>
+                <td> 99.2 </td>
+                <td> 616.73 </td>
+                <td> 2,496,133 </td>
+                <td> 1,248,063 </td>
+                <td> 1,258,113 </td>
+                <td> 74,201 </td>
+              </tr>
+            
+              <tr>
+                <td> 1 year ago </td>
+                <td> 2016-02-13 </a></td>
+                <td> 95.4 </td>
+                <td> 615.40 </td>
+                <td> 2,399,525 </td>
+                <td> 1,199,759 </td>
+                <td> 1,258,113 </td>
+                <td> 70,879 </td>
+              </tr>
+            
+          </tbody>
+        </table>
+        <div class="panel-body">
+          <div class="footnote-number">*</div><p id="*-footnote" class="footnote">Percent Full is based on Conservation Storage and Conservation Capacity and doesn't account for storage in flood pool.</p>
+          <div class="footnote-number">**</div><p id="**-footnote" class="footnote">&nbsp; &nbsp;Values above, including today's are averaged conditions. For near real-time instantaneous water level, see table below or <a href="/reservoirs/flood">the interactive map viewer</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 table-responsive">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"> <i class="fa fa-table"> </i> Most Recent Instantaneous Water Level </h3>
+        </div>
+        
+          <table class="table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th style="min-width:8em;">   </th>
+                <th style="min-width:5em;"> Date/time </th>
+                <th class="uses-popover" title="Water Level" data-container="body" data-content="
+        The elevation of the top surface of a reservoir&#39;s body of water.
+    "> 
+                  Water Level <br> (ft)
+                </th>
+                <th style="max-width:11em;" class="uses-popover" title="Conservation Pool Elevation" data-container="body" data-content="
+        The elevation of the top of a reservoir&#39;s conservation pool.
+    "> Conservation Pool Elevation<br> (ft)
+                </th>
+                <th style="max-width:11em;" class="uses-popover" title="Height above Conservation Pool" data-container="body" data-content="
+        The vertical distance between a reservoir&#39;s water surface elevation and
+        the top of the conservation pool. Negative numbers indicate how far
+        below &#39;full&#39; the reservoir is, while positive numbers indicate how far
+        above the top of the conservation pool the water surface is.
+    "> 
+                  Height Above Conservation Pool <br> (ft)
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td> Most recent </td>
+                  <td> 2017-02-13 17:00 </td>
+                  <td> 615.25 </td>
+                  <td> 617.0 </td>
+                  <td> -1.8
+                       <span class="timestamp">below flood pool</span>
+                       
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td> 1 hour prior </td>
+                  <td> 2017-02-13 16:00 </td>
+                  <td> 615.29 </td>
+                  <td> 617.0 </td>
+                  <td> -1.7
+                       <span class="timestamp">below flood pool</span>
+                       
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td> 2 hours prior </td>
+                  <td> 2017-02-13 15:00 </td>
+                  <td> 615.30 </td>
+                  <td> 617.0 </td>
+                  <td> -1.7
+                       <span class="timestamp">below flood pool</span>
+                       
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td> 6 hours prior </td>
+                  <td> 2017-02-13 11:00 </td>
+                  <td> 615.23 </td>
+                  <td> 617.0 </td>
+                  <td> -1.8
+                       <span class="timestamp">below flood pool</span>
+                       
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td> 12 hours prior </td>
+                  <td> 2017-02-13 05:00 </td>
+                  <td> 615.26 </td>
+                  <td> 617.0 </td>
+                  <td> -1.7
+                       <span class="timestamp">below flood pool</span>
+                       
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td> 24 hours prior </td>
+                  <td> 2017-02-12 17:00 </td>
+                  <td> 615.27 </td>
+                  <td> 617.0 </td>
+                  <td> -1.7
+                       <span class="timestamp">below flood pool</span>
+                       
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td> 48 hours prior </td>
+                  <td> 2017-02-11 17:00 </td>
+                  <td> 615.34 </td>
+                  <td> 617.0 </td>
+                  <td> -1.7
+                       <span class="timestamp">below flood pool</span>
+                       
+                  </td>
+                </tr>
+              
+            </tbody>
+          </table>
+          <div class="panel-body">
+            <div class="footnote-number">*</div><p id="*-footnote" class="footnote">Data is provisional and subject to revision.</p>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default table-responsive">
+        <div class="panel-heading">
+          <h3 class="panel-title"> <i class="fa fa-info-circle"> </i> Additional Information </h3>
+        </div>
+        <table id="lake-info-table" class="table table-condensed">
+          <tbody>
+          
+            <tr>
+              <td class="left">Impoundment date</td>
+              <td>1944-01-01</td>
+            </tr>
+          
+          
+            <tr>
+              <td class="left">Vertical datum</td>
+              <td>NGVD29</td>
+            </tr>
+          
+          
+            <tr>
+              <td class="left">Gauge</td>
+              <td>
+                USACE:DSNT2</td>
+            </tr>
+          
+            <tr>
+              <td class="left">Gauge</td>
+              <td><a href="http://waterdata.usgs.gov/nwis/inventory/?site_no=07331500">
+                USGS:07331500</a></td>
+            </tr>
+          
+          
+            <tr>
+  <td class="left">
+    Dead pool elevation</td>
+  <td>
+    523.0 
+    ft above NGVD29
+    
+  </td>
+</tr>
+          
+            
+          
+            <tr>
+  <td class="left">
+    Conservation pool elevation</td>
+  <td>
+    617.0 
+    ft above NGVD29
+    
+  </td>
+</tr>
+          
+            
+          
+            
+          
+            
+          
+            <tr>
+  <td class="left">
+    Emergency spillway crest elevation</td>
+  <td>
+    640 
+    ft above NGVD29
+    
+  </td>
+</tr>
+          
+            <tr>
+  <td class="left">
+    Flood pool elevation</td>
+  <td>
+    640 
+    ft above NGVD29
+    
+  </td>
+</tr>
+          
+            <tr>
+  <td class="left">
+    Maximum design elevation</td>
+  <td>
+    666.4 
+    ft above NGVD29
+    
+  </td>
+</tr>
+          
+            <tr>
+  <td class="left">
+    Top of dam elevation</td>
+  <td>
+    670 
+    ft above NGVD29
+    
+  </td>
+</tr>
+          
+            <tr>
+              <td class="left">Data download (CSV)</td>
+              <td><a href="/reservoirs/individual/texoma.csv">period of record</a>, <a href="/reservoirs/individual/texoma-1year.csv">last one year</a>, <a href="/reservoirs/individual/texoma-30day.csv">last 30 days</a></td>
+            </tr>
+          </tbody>
+        </table>
+        
+          <div class="panel-body">
+            <h4>Elevation-Area-Capacity Curves</h4>
+            
+              
+              
+              <div class="row">
+                <div class="col-xs-8">
+                
+                  <a href="/reservoirs/individual/texoma/rating-curve/twdb/2002-07-01">
+                  2002-07-01 </a> (source: twdb)
+                 : <a href="http://www.twdb.texas.gov/hydro_survey/texoma/2002-07"> GIS Data </a></div>
+              </div>
+            
+          </div>
+        
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel panel-default table-responsive">
+        <div class="panel-heading">
+          <h3 class="panel-title"> <i class="fa fa-map"> </i> Lake Location </h3>
+        </div>
+        <div class="panel-body">
+          <a href="/reservoirs/individual/texoma/location.png" >
+              <img id="map-img" src="/reservoirs/individual/texoma/location.png" class="img-responsive center-block"> </img>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+        </div>
+      </div>
+      <div class="push"></div>
+    </div>
+
+    
+      <footer class="footer">
+          <div class="">
+            <div class="col-md-12">
+              This website is a product of the <a href="http://www.twdb.texas.gov">Texas Water Development Board</a> 
+            </div>
+          </div>
+          <div class="">
+            <div class="col-md-5">
+              <span class="site-links">
+                <a href="/policies" > Site Policies </a> |
+                <a href="http://www.texas.gov" > Texas Online </a> |
+                <a href="http://www.governor.texas.gov/homeland" > Homeland Security </a> |
+                <a href="http://www2.tsl.state.tx.us/trail" > TRAIL </a> |
+                <a href="mailto:waterdatafortexas@twdb.texas.gov" > Contact Us </a>
+              </span>
+            </div>
+          </div>
+      </footer>
+    
+
+
+    <script src="/static/components/d3/d3.min.js"></script>
+    <script src="/static/components/leaflet/leaflet.js"></script>
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js'></script>
+    <script src="/static/components/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script src="/static/components/spin/spin.js"></script>
+    <script src="/static/components/moment/moment.js"></script>
+    <script src="/static/components/Leaflet.awesome-markers/dist/leaflet.awesome-markers.min.js"></script>
+    <script src="/static/components/retinajs/dist/retina.min.js"></script>
+    <script src="/static/components/lodash/dist/lodash.min.js"></script>
+    <script src="/static/components/Leaflet.MakiMarkers/Leaflet.MakiMarkers.js"></script>
+    <script src="/static/components/topojson/topojson.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+    
+    
+    <script src="/static/components/tablesorter/dist/js/jquery.tablesorter.min.js"></script>
+    <script src="/static/components/leaflet.defaultextent/dist/leaflet.defaultextent.js"></script>
+    <script src="/static/build/dist.js"></script>
+    
+  <script type="text/javascript" src="/reservoirs/static/bp/build/dist.js"></script>
+
+
+  </body>
+</html>

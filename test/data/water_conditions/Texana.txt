@@ -1,0 +1,6 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/texana">Current Lake Level</a><br>
+<!--<a href="http://waterdata.usgs.gov/tx/nwis/dv?format=gif&amp;period=31&amp;site_no=08164525"> Current
+    Lake Level</a><br /> -->
+  Conservation Pool Elevation: 43.99 ft. msl<br>
+  Fluctuation: High, 10-15 feet<br>
+  Normal Clarity: Stained to muddy</p>

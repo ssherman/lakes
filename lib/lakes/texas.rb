@@ -2,9 +2,11 @@ require 'net/http'
 require 'nokogiri'
 require 'date'
 require 'try'
+require 'lakes/helper'
 
 module Lakes
   class Texas
+    include Lakes::Helper
     attr_reader :lake_data
 
     def initialize
@@ -47,7 +49,7 @@ module Lakes
       main_div = html_doc.at('div#maincontent')
 
       parse_lake_characteristics(main_div, lake_data)
-      parse_water_conditions(main_div, lake_data)
+      parse_water_conditions_and_data(main_div, lake_data)
       parse_reservoir_controlling_authority(main_div, lake_data)
       parse_aquatic_vegetation(main_div, lake_data)
       parse_predominant_fish_species(main_div, lake_data)
@@ -122,8 +124,31 @@ module Lakes
       lake_data[:lake_characteristics][:year_impounded] = parser.year_impounded
     end
 
-    def parse_water_conditions(main_div, lake_data)
-      process_simple_section(main_div, lake_data, 'Water Conditions', :water_conditions, true)
+    def parse_water_conditions_and_data(main_div, lake_data)
+      lake_data[:raw_water_conditions] = process_simple_section(main_div, lake_data, 'Water Conditions', :water_conditions, true)
+
+      File.write("test/data/water_conditions/#{lake_data[:name]}.txt", lake_data[:raw_water_conditions])
+      parser = WaterConditionsParser.new(lake_data[:raw_water_conditions])
+      lake_data[:water] = {}
+      lake_data[:water][:conditions] = {}
+      lake_data[:water][:water_data_uri] = parser.water_data_uri
+      lake_data[:water][:conditions][:conservation_pool_elevation] = parser.conservation_pool_elevation
+      lake_data[:water][:conditions][:fluctuation] = parser.fluctuation
+      lake_data[:water][:conditions][:normal_clarity] = parser.normal_clarity
+
+      lake_data[:water][:data] = {}
+      return if parser.water_data_uri.nil?
+      content = begin
+        http_get(parser.water_data_uri)
+      rescue Errno::ECONNREFUSED => e
+        puts "#{e.message} for #{lake_data[:name]}: #{parser.water_data_uri}"
+        nil
+      end
+
+      return if content.nil?
+      water_data_parser = WaterDataParser.new(content)
+      lake_data[:water][:conservation_pool_elevation_in_ft_msl] = water_data_parser.conservation_pool_elevation_in_ft_msl
+      lake_data[:water][:percentage_full] = water_data_parser.conservation_pool_elevation_in_ft_msl
     end
 
     def parse_reservoir_controlling_authority(main_div, lake_data)
@@ -259,38 +284,11 @@ module Lakes
       data
     end
 
-    # converts this:
-    # ../../../action/waterecords.php?WB_code=0001
-    # into this:
-    # http://tpwd.texas.gov/fishboat/fish/action/waterecords.php?WB_code=0001
-    # based on this:
-    # http://tpwd.texas.gov/fishboat/fish/recreational/lakes/abilene
-    def convert_relative_href(href, current_url)
-      relative_depth = href.split('..').count - 1
-      url_parts = current_url.split('/')
-      url_parts.slice!(-relative_depth, relative_depth)
-      fixed_href = href.gsub('../', '')
-      url_parts.join('/') + '/' + fixed_href
-    end
-
-    # texas lake websites use lots of non breaking spaces
-    def cleanup_data(value)
-      nbsp = 160.chr('UTF-8')
-      value = value.strip.gsub(nbsp, '')
-      value.empty? ? nil : value
-    end
-
     def process_simple_section(main_div, lake_data, section_title, data_name, html)
       data = main_div.xpath("//h6[contains(text(), \"#{section_title}\")]").first
       element_type_function = html ? :to_html : :text
       content = data.try(:next_element).try(element_type_function)
       lake_data[data_name] = content
-    end
-
-    # texas lake pages are encoded in Windows-1252 :(
-    def http_get(url)
-      uri = URI(url)
-      Net::HTTP.get(uri).encode('UTF-8', 'Windows-1252')
     end
   end
 end

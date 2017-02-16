@@ -1,0 +1,10 @@
+<p>
+   <a href="http://waterdatafortexas.org/reservoirs/individual/falcon">Current
+  Lake Level</a><br>
+  <!--<a href="http://www.ibwc.state.gov/wad/flowdata.htm">Current
+  Lake Level</a> (in meters)<br />-->
+    Conservation Pool Elevation: 301.2 ft. msl<br>
+    Fluctuation: Severe, 40 to 
+                  50 feet or more<br>
+    Normal Clarity: Turbid (upper) to 
+    stained (lower)</p>

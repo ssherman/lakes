@@ -1,0 +1,5 @@
+<p>Current
+    Lake Level: (281) 456-2800<br>
+  Conservation Pool Elevation: 47 ft. msl<br>
+  Fluctuation: Low, 1-2 feet<br>
+  Normal Clarity: Clear to slightly stained</p>

@@ -1,0 +1,5 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/e-v-spence">Current Lake Level</a><br>
+  Conservation Pool Elevation: 1,898 ft. msl<br>
+  Fluctuation: 6-10 ft. annually<br>
+  Normal Clarity: Clear at the dam, 
+  more turbid upstream</p>

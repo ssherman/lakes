@@ -1,0 +1,4 @@
+<p><!--<a href="http://www.lcra.org/water/XML_lake.html">Current Lake Level</a><br />-->
+  Conservation Pool Elevation: 390 ft. msl<br>
+  Fluctuation: Stable<br>
+  Normal Clarity: Slightly to moderately stained</p>

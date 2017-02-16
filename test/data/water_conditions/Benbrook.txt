@@ -1,0 +1,4 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/benbrook">Current Lake Level</a><br>
+  Conservation Pool Elevation: 694 ft. msl<br>
+  Fluctuation: Average 4 feet annually<br>
+  Normal Clarity: Stained</p>

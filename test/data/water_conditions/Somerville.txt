@@ -1,0 +1,5 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/somerville">Current Lake Level</a><br>
+  Conservation Pool Elevation: 238 ft. msl<br>
+  Fluctuation: Low to moderate, 
+                  1-6 feet<br>
+  Normal Clarity: Slightly stained</p>

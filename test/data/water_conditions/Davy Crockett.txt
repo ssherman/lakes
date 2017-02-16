@@ -1,0 +1,5 @@
+<p>Current
+    Lake Level: Contact controlling authority<br>
+  Conservation Pool Elevation: 487 ft. msl<br>
+  Fluctuation: Moderate<br>
+  Normal Clarity: Moderate</p>

@@ -1,0 +1,6 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/mackenzie">Current Lake Level</a><br><!--<a href="http://waterdata.usgs.gov/tx/nwis/dv?format=gif&amp;period=31&amp;site_no=07298100">Current
+    Lake Level</a><br /> -->
+  Conservation Pool Elevation: 3,100 ft. msl<br>
+  Fluctuation: Severe, 4-10 ft. per year<br>
+  Normal Clarity: Clear with visibility 
+  4-6 ft</p>

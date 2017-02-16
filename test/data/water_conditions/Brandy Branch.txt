@@ -1,0 +1,3 @@
+<p>Conservation Pool Elevation: 340 ft. msl<br>
+  Fluctuation: Less than 3 feet<br>
+  Normal Clarity: Clear</p>

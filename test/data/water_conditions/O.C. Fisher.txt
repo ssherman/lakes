@@ -1,0 +1,5 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/o-c-fisher">Current Lake Level</a><br>
+  Conservation Pool Elevation: 1,908 ft. msl<br>
+  Fluctuation: 6-8 ft. annually<br>
+  Normal Clarity: Clear near the dam, stained in the upper end<br>
+</p>

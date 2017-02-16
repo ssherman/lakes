@@ -1,0 +1,6 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/pat-mayse">Current Lake Level</a><br><!--<a href="http://www.swt-wc.usace.army.mil/PATM.lakepage.html">Current
+    Lake Level</a> <br /> -->
+  Conservation Pool Elevation: 451 ft. msl<br>
+  Fluctuation: Moderate, 2-4 
+                  ft.<br>
+  Normal Clarity: Moderately stained</p>

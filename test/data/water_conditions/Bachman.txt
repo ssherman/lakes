@@ -1,0 +1,5 @@
+<p>Current
+    Lake Level: No gauge available <br>
+  <!--Conservation Pool Elevation: <br />-->
+  Fluctuation: 1 foot <br>
+  Normal Clarity: Stained </p>

@@ -1,0 +1,5 @@
+<p><a href="http://hydromet.lcra.org/riverreport/report.aspx#current">Current Lake Level</a><br>
+  Conservation Pool Elevation: 738 ft. msl<br>
+  Fluctuation: None<br>
+  Normal Clarity: Clear to slightly 
+  stained </p>

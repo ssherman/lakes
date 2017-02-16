@@ -1,0 +1,8 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/austin">Current Lake Level</a><br>
+<!--<a href="http://www.lcra.org/water/XML_lake.html">Current Lake Level</a><br /> -->
+  Conservation Pool Elevation: 491.95 ft. msl<br>
+  Fluctuation: Constant-level 
+                  lake; however, may fluctuate slightly with releases from
+  Lake Travis upstream<br>
+  Normal Clarity: Clear to slightly 
+  stained</p>

@@ -1,13 +1,13 @@
 require 'test_helper'
 
-class LakesTest < Minitest::Test
+class LakeCharacteristicsParserTest < Minitest::Test
   def test_that_it_has_a_version_number
     refute_nil ::Lakes::VERSION
   end
 
   def test_basic_lake_characteristics
     content = File.read('test/data/lake_characteristics/Lady Bird Lake.txt')
-    parser = LakeCharacteristicsParser.new(content)
+    parser = Lakes::Texas::LakeCharacteristicsParser.new(content)
     assert_equal 'On the Colorado River in downtown Austin', parser.location_desc
     assert_equal " 468 acres\r", parser.surface_area_raw_text
     assert_equal 468, parser.surface_area_in_acres
@@ -19,7 +19,7 @@ class LakesTest < Minitest::Test
 
   def test_lake_conroe
     content = File.read('test/data/lake_characteristics/Conroe.txt')
-    parser = LakeCharacteristicsParser.new(content)
+    parser = Lakes::Texas::LakeCharacteristicsParser.new(content)
     assert_equal 'West Fork of San Jacinto River in Montgomery and Walker Counties', parser.location_desc
     assert_equal " 20,118 acres\r", parser.surface_area_raw_text
     assert_equal 20118, parser.surface_area_in_acres
@@ -31,7 +31,7 @@ class LakesTest < Minitest::Test
 
   def test_lake_fryer
     content = File.read('test/data/lake_characteristics/Fryer.txt')
-    parser = LakeCharacteristicsParser.new(content)
+    parser = Lakes::Texas::LakeCharacteristicsParser.new(content)
     assert_equal 'Located in Wolf Creek Park in Ochiltree County, approximately 12 miles south of Perryton', parser.location_desc
     assert_equal " 86 acres\r", parser.surface_area_raw_text
     assert_equal 86, parser.surface_area_in_acres
@@ -43,7 +43,7 @@ class LakesTest < Minitest::Test
 
   def test_caddo_lake
     content = File.read('test/data/lake_characteristics/Caddo.txt')
-    parser = LakeCharacteristicsParser.new(content)
+    parser = Lakes::Texas::LakeCharacteristicsParser.new(content)
     assert_equal 'On Big Cypress Bayou on the Texas-Louisiana state line, northeast of Marshall in Harrison and Marion counties', parser.location_desc
     assert_equal " 26,800 acres\r", parser.surface_area_raw_text
     assert_equal 26800, parser.surface_area_in_acres

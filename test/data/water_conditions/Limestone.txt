@@ -1,0 +1,4 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/limestone">Current Lake Level</a><br>
+  Conservation Pool Elevation: 363 ft. msl<br>
+  Fluctuation: 1-3 feet<br>
+  Normal Clarity: Stained</p>

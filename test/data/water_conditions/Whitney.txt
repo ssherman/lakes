@@ -1,0 +1,4 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/whitney">Current Lake Level</a><br>
+  Conservation Pool Elevation: 533 ft. msl<br>
+  Fluctuation: 4-8 feet annually<br>
+  Normal Clarity: Stained</p>

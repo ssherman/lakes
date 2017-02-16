@@ -1,0 +1,4 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/belton">Current Lake Level</a><br>
+  Conservation Pool Elevation: 594 ft. msl<br>
+  Fluctuation: 3-5 feet<br>
+  Normal Clarity: Moderate</p>

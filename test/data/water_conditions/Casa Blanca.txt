@@ -1,0 +1,5 @@
+<p>Current Water Level: Available at state park office<br>
+  Conservation Pool Elevation: 440 ft. msl<br>
+  Fluctuation: Large fluctuations, 
+                    up to 25 feet<br>
+  Normal Clarity: Turbid</p>

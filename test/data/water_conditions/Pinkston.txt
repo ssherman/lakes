@@ -1,0 +1,5 @@
+<p>Current
+    Lake Level: Pinkston Water Plant (936) 598-7856<br>
+  Conservation Pool Elevation: 300 ft. msl<br>
+  Fluctuation: 1-5 feet<br>
+  Normal Clarity: Clear</p>

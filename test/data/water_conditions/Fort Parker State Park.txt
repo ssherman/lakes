@@ -1,0 +1,4 @@
+<p>Current
+    Lake Level: Available at State Park office<br>
+  Fluctuation: 1-2 feet<br>
+  Normal Clarity: Very turbid</p>

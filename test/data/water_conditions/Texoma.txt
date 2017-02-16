@@ -1,0 +1,6 @@
+<p><a href="http://waterdatafortexas.org/reservoirs/individual/texoma">Current Lake Level</a><br>
+<!--<a href="http://www.swt-wc.usace.army.mil/DENI.lakepage.html">Current
+    Lake Level</a><br /> -->
+  Conservation Pool Elevation: 615 to 619 ft. msl<br>
+  Fluctuation: 5-8 feet annually<br>
+  Normal Clarity: Moderate to clear</p>
