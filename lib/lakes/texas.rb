@@ -157,7 +157,7 @@ module Lakes
       return if content.nil?
       water_data_parser = WaterDataParser.new(content)
       lake_data[:water][:conservation_pool_elevation_in_ft_msl] = water_data_parser.conservation_pool_elevation_in_ft_msl
-      lake_data[:water][:percentage_full] = water_data_parser.conservation_pool_elevation_in_ft_msl
+      lake_data[:water][:percentage_full] = water_data_parser.percentage_full
     end
 
     def parse_reservoir_controlling_authority(main_div, lake_data)

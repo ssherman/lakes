@@ -8,4 +8,11 @@ class WaterDataParserTest < Minitest::Test
     assert_equal 617.0, parser.conservation_pool_elevation_in_ft_msl
     assert_equal 95.0, parser.percentage_full
   end
+
+  def test_water_data_on_abilene
+    content = File.read('test/data/water_data/Abilene.txt')
+    parser = Lakes::Texas::WaterDataParser.new(content)
+    assert_equal 2012.3, parser.conservation_pool_elevation_in_ft_msl
+    assert_equal 96.5, parser.percentage_full
+  end
 end

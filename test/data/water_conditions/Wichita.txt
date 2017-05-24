@@ -1,5 +1,5 @@
 <p> Current Water Levels:
                   City of Wichita Falls (940) 761-7477<br>
-Conservation Pool Elevation: 976 ft. msl<!--<br />
-  Fluctuation: 1 foot-->
+Conservation Pool Elevation: 976 ft. msl<br>
+  Fluctuation: 1 foot
 </p>
