@@ -13,6 +13,15 @@ module Lakes
       @lake_data = {}
     end
 
+    def all_details
+      result = []
+      list.each do |lake_name|
+        result << get_details(lake_name)
+        sleep(1)
+      end
+      result
+    end
+
     def list
       return @lake_data.keys unless @lake_data.empty?
 
@@ -140,7 +149,7 @@ module Lakes
       return if parser.water_data_uri.nil?
       content = begin
         http_get(parser.water_data_uri)
-      rescue Errno::ECONNREFUSED => e
+      rescue Errno::ECONNREFUSED, OpenSSL::SSL::SSLError => e
         puts "#{e.message} for #{lake_data[:name]}: #{parser.water_data_uri}"
         nil
       end
