@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'This gem parses lake details from various government websites'
   spec.description   = 'I wrote this gem to originally parse texas lake data'
-  spec.homepage      = nil
-  spec.license       = 'mit'
+  spec.homepage      = 'https://github.com/ssherman/lakes'
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
