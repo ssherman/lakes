@@ -136,7 +136,7 @@ module Lakes
     def parse_water_conditions_and_data(main_div, lake_data)
       lake_data[:raw_water_conditions] = process_simple_section(main_div, lake_data, 'Water Conditions', :water_conditions, true)
 
-      File.write("test/data/water_conditions/#{lake_data[:name]}.txt", lake_data[:raw_water_conditions])
+      # File.write("test/data/water_conditions/#{lake_data[:name]}.txt", lake_data[:raw_water_conditions])
       parser = WaterConditionsParser.new(lake_data[:raw_water_conditions])
       lake_data[:water] = {}
       lake_data[:water][:conditions] = {}
