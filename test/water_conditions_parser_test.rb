@@ -14,7 +14,7 @@ class WaterConditionsParserTest < Minitest::Test
   def test_water_conditions_on_decker
     content = File.read('test/data/water_conditions/Decker.txt')
     parser = Lakes::Texas::WaterConditionsParser.new(content)
-    assert_equal nil, parser.water_data_uri
+    assert_nil parser.water_data_uri
     assert_equal '555 ft. msl', parser.conservation_pool_elevation
     assert_equal 'Nearly constant level', parser.fluctuation
     assert_equal 'Clear to slightly stained', parser.normal_clarity
@@ -23,8 +23,8 @@ class WaterConditionsParserTest < Minitest::Test
   def test_water_conditions_on_alvarado_park
     content = File.read('test/data/water_conditions/Alvarado Park.txt')
     parser = Lakes::Texas::WaterConditionsParser.new(content)
-    assert_equal nil, parser.water_data_uri
-    assert_equal nil, parser.conservation_pool_elevation
+    assert_nil parser.water_data_uri
+    assert_nil parser.conservation_pool_elevation
     assert_equal '1-2 feet', parser.fluctuation
     assert_equal 'Stained to murky', parser.normal_clarity
   end
@@ -41,18 +41,18 @@ class WaterConditionsParserTest < Minitest::Test
   def test_water_conditions_lake_diversion
     content = File.read('test/data/water_conditions/Diversion.txt')
     parser = Lakes::Texas::WaterConditionsParser.new(content)
-    assert_equal nil, parser.water_data_uri
-    assert_equal nil, parser.conservation_pool_elevation
-    assert_equal nil, parser.fluctuation
-    assert_equal nil, parser.normal_clarity
+    assert_nil parser.water_data_uri
+    assert_nil parser.conservation_pool_elevation
+    assert_nil parser.fluctuation
+    assert_nil parser.normal_clarity
   end
 
   def test_water_conditions_nil
     content = nil
     parser = Lakes::Texas::WaterConditionsParser.new(content)
-    assert_equal nil, parser.water_data_uri
-    assert_equal nil, parser.conservation_pool_elevation
-    assert_equal nil, parser.fluctuation
-    assert_equal nil, parser.normal_clarity
+    assert_nil parser.water_data_uri
+    assert_nil parser.conservation_pool_elevation
+    assert_nil parser.fluctuation
+    assert_nil parser.normal_clarity
   end
 end

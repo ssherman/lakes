@@ -20,9 +20,10 @@ module Lakes
         cons_pool_elevation_header_element = html_doc.xpath('//td[contains(text(), "Conservation pool elevation")]').first
         cons_pool_elevation_root = cons_pool_elevation_header_element.try(:next_element)
         @conservation_pool_elevation_in_ft_msl = cleanup_raw_text(cons_pool_elevation_root.try(:text))
-          .try(:match, /([0-9\.]+)/)
+          .try(:match, /([0-9,\.]+)/)
           .try(:captures)
           .try(:first)
+          .try(:gsub, ',', '')
           .try(:to_f)
 
         percentage_full_element = cleanup_raw_text(html_doc.css('div.page-title h2 small').try(:text))

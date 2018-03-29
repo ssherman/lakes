@@ -23,8 +23,8 @@ class LakeCharacteristicsParserTest < Minitest::Test
     assert_equal 'West Fork of San Jacinto River in Montgomery and Walker Counties', parser.location_desc
     assert_equal " 20,118 acres\r", parser.surface_area_raw_text
     assert_equal 20118, parser.surface_area_in_acres
-    assert_equal nil, parser.max_depth_raw_text
-    assert_equal nil, parser.max_depth_in_feet
+    assert_nil parser.max_depth_raw_text
+    assert_nil parser.max_depth_in_feet
     assert_equal ' 1973', parser.year_impounded_raw_text
     assert_equal 1973, parser.year_impounded
   end

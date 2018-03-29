@@ -25,7 +25,7 @@ module Lakes
     def list
       return @lake_data.keys unless @lake_data.empty?
 
-      base_url = 'http://tpwd.texas.gov/fishboat/fish/recreational/lakes/'
+      base_url = 'https://tpwd.texas.gov/fishboat/fish/recreational/lakes/'
       content = http_get("#{base_url}lakelist.phtml")
       html_doc = Nokogiri::HTML(content)
       
@@ -177,7 +177,7 @@ module Lakes
 
     def parse_lake_surveys(main_div, lake_data)
       link = main_div.xpath('p/a[contains(text(), "Latest Survey Report")]').first
-      stocking_history = if link.nil?
+      if link.nil?
         nil
       else
         uri = link['href']
@@ -187,7 +187,7 @@ module Lakes
 
     def parse_stocking_history(main_div, lake_data)
       link = main_div.xpath('p/a[contains(text(), "Stocking History")]').first
-      stocking_history = if link.nil?
+      if link.nil?
         nil
       else
         uri = link['href']
