@@ -214,6 +214,7 @@ module Lakes
         lake_data[:current_fishing_report_uri] = convert_relative_href(uri, lake_data[:details_uri])
 
         content = http_get(lake_data[:current_fishing_report_uri])
+        report_parser = FishingReportDataParser.new(content)
         current_fishing_report_doc = Nokogiri::HTML(content)
         current_fishing_report_dl = current_fishing_report_doc.at('div.row.report div.container dl')
 
