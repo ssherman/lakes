@@ -215,12 +215,10 @@ module Lakes
 
         content = http_get(lake_data[:current_fishing_report_uri])
         report_parser = FishingReportParser.new(content)
-        current_fishing_report_doc = Nokogiri::HTML(content)
-        current_fishing_report_dl = current_fishing_report_doc.at('div.row.report div.container dl')
-
-        date = cleanup_data(current_fishing_report_dl.at('dt span.title').text)
-        report = cleanup_data(current_fishing_report_dl.xpath('dd').text)
-        {date: date, report: report}
+        {
+          date: report_parser.date,
+          report: report_parser.report
+        }
       end
 
       lake_data[:current_fishing_report] = fishing_report

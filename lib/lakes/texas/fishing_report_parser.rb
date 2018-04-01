@@ -11,6 +11,9 @@ module Lakes
 
       def initialize(text)
         @raw_text = text
+        @raw_date = nil
+        @date = nil
+        @report = nil
         parse
       end
 
@@ -21,6 +24,8 @@ module Lakes
 
         date_text = current_fishing_report_dl.at('dt span.title').try(:text)
         @raw_date = cleanup_data(date_text) unless date_text.nil?
+
+        @date = Date.parse(@raw_date) rescue nil
 
         report_text = current_fishing_report_dl.xpath('dd').try(:text)
         @report = cleanup_data(report_text) unless report_text.nil?
