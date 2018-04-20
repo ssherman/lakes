@@ -1,12 +1,12 @@
 require 'test_helper'
 require 'mocha/minitest'
 
-class ShareALunkerTest < Minitest::Test
+class ShareLunkerTest < Minitest::Test
   def test_share_parsing
-    content = File.read('test/data/share_a_lunker.html')
+    content = File.read('test/data/share_lunker.html')
 
-    lunker = Lakes::Texas::ShareALunker.new
-    lunker.expects(:http_get).with(Lakes::Texas::ShareALunker::URL).returns(content)
+    lunker = Lakes::Texas::ShareLunker.new
+    lunker.expects(:http_get).with(Lakes::Texas::ShareLunker::URL).returns(content)
 
     assert_equal 570, lunker.list.count
     lunker.list.each do |l|

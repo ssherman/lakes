@@ -1,7 +1,7 @@
 require 'nokogiri'
 module Lakes
   class Texas
-    class ShareALunker
+    class ShareLunker
       include Lakes::Helper
       URL = 'https://tpwd.texas.gov/spdest/visitorcenters/tffc/sharelunker/archives/lunkersearch_adv.phtml'
 
