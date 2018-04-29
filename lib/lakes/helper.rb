@@ -15,7 +15,8 @@ module Lakes
     end
 
     def cleanup_raw_text(raw_text)
-      raw_text.try(:gsub, /\s+/, ' ').try(:strip)
+      v = raw_text.try(:gsub, /\s+/, ' ').try(:strip)
+      v == "" ? nil : v
     end
 
     # converts this:
