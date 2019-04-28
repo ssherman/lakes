@@ -19,6 +19,28 @@ module Lakes
       v == "" ? nil : v
     end
 
+    # converts a html table with headers and rows into
+    # an array of hashes with header => value
+    def process_data_table(headers, rows)
+      data = []
+      header_count = headers.length
+      row_count = rows.count / header_count
+
+      row_data_index = 0
+      row_count.times do |row_index|
+
+        entry = {}
+        header_count.times do |header_index|
+          header = cleanup_data(headers[header_index])
+          table_data = cleanup_data(rows[row_data_index])
+          row_data_index += 1
+          entry[header] = table_data
+        end
+        data << entry
+      end
+      data
+    end
+
     # converts this:
     # ../../../action/waterecords.php?WB_code=0001
     # into this:

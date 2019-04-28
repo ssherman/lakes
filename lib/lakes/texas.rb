@@ -234,62 +234,8 @@ module Lakes
       lake_data[:fishing_records_uri] = convert_relative_href(uri, lake_data[:details_uri])
 
       content = http_get(lake_data[:fishing_records_uri])
-      lake_records_doc = Nokogiri::HTML(content)
-      lake_records_main_div = lake_records_doc.at('div#maincontent')
-
-      # H2's are record types like:
-      # - weight records
-      # - catch and release records (by length)
-
-      element = lake_records_main_div.children.first
-      current_record_type = nil # Weight or Length
-      current_age_group = nil # all ages, youth, etc
-      fishing_records_data = {}
-      while element = element.next_element
-        case element.name
-        when 'h2'
-          current_record_type = cleanup_data(element.text)
-          fishing_records_data[current_record_type] = {}
-        when 'h3'
-          current_age_group = cleanup_data(element.text)
-          fishing_records_data[current_record_type][current_age_group] = {}
-        when 'table'
-          fishing_method = cleanup_data(element.xpath('caption/big').text)
-
-          if fishing_records_data[current_record_type][current_age_group][fishing_method].nil?
-            fishing_records_data[current_record_type][current_age_group][fishing_method] = []
-          end
-
-          headers = element.xpath('tr/th').map{ |r| r.text }
-          rows = element.xpath('tr/td').map{ |r| r.text }
-
-          table_data = process_data_table(headers, rows)
-          fishing_records_data[current_record_type][current_age_group][fishing_method] = table_data
-        end
-      end
-      lake_data[:fishing_records] = fishing_records_data
-    end
-
-    # converts a html table with headers and rows into
-    # an array of hashes with header => value
-    def process_data_table(headers, rows)
-      data = []
-      header_count = headers.length
-      row_count = rows.count / header_count
-
-      row_data_index = 0
-      row_count.times do |row_index|
-
-        entry = {}
-        header_count.times do |header_index|
-          header = cleanup_data(headers[header_index])
-          table_data = cleanup_data(rows[row_data_index])
-          row_data_index += 1
-          entry[header] = table_data
-        end
-        data << entry
-      end
-      data
+      parser = LakeRecordsParser.new(content)
+      lake_data[:fishing_records] = parser.records
     end
 
     def process_simple_section(main_div, lake_data, section_title, data_name, html)

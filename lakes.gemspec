@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 12.3"
   spec.add_development_dependency "minitest", "~> 5.11"
   spec.add_development_dependency "mocha", "~> 1.2"
-  spec.add_dependency 'nokogiri', "~> 1.8"
+  spec.add_dependency 'nokogiri', "~> 1.10"
 end
